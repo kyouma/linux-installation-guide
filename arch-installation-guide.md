@@ -348,7 +348,7 @@ fc-cache -fv
 - man-db man-pages-ru tealdeer (tldr) (`man --locale=ru <query>`)
 - sysstat (ради iostat)
 - lm_sensors
-- unrar
+- unrar zip unzip 7zip
 - yt-dlp
 - virtualbox-guest-utils (если на виртуальной машине VirtualBox)
 - reflector (управляет списком серверов для загрузки пакетов)
