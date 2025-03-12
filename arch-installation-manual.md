@@ -1,6 +1,6 @@
 ### Процесс установки через archinstall
 
-1. Модифицировать скрипт archinstall/lib/installer.py
+1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages`
     - Чтобы EFI-загрузчик установился в `/boot`, а не в папку/раздел EFI, в функции `_add_grub_bootloader()` переменная `boot_dir` должна остаться "`/boot`": выключить ветку
 
         ```
@@ -343,7 +343,7 @@ fc-cache -fv
 - intel-ucode или amd-ucode
 
 #### Офис
-- libreoffice-fresh libreoffice-fresh-ru hunspell hunspell-ru hunspell-en_us hunspell-en_gb hyphen hyphen-en hyphen-ru\*
+- libreoffice-fresh hunspell hunspell-ru hunspell-en_us hunspell-en_gb hyphen hyphen-en hyphen-ru\*
 
 #### Браузеры
 - firefox
@@ -353,7 +353,7 @@ fc-cache -fv
 - telegram-desktop
 
 #### Шрифты
-- noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra ttf-jigmo
+- noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jigmo
 
 #### Инструменты
 - yakuake
@@ -371,7 +371,7 @@ fc-cache -fv
 - docker docker-compose lazydocker\*
 - kclock
 - bpytop
-- tor torbrowser-launcher
+- tor torbrowser-launcher(надо ли?)
 - nekoray\* v2rayn\* hiddify\*
 - openvpn networkmanager-openvpn (не уверен, что KDE сам не справится)
 
@@ -396,10 +396,10 @@ fc-cache -fv
 
 | Программа | Формулы | grid tables | Синхронный скролинг | Подхватывает все шрифты | Проверка правописания | Таблицы работают корректно |
 |---|---|---|---|---|---|---|
-| Kate | x | x | x | ~ | ~ | v |
-| ghostwriter | v | v | x | ~ | ~ | v |
-| zettr | v | x | v | v | v | x |
-| apostrophe | v | v | v | v | x | v |
+| Kate |  |  |  | надо настроить <br/> font fallback | одновременно 1 язык | v |
+| ghostwriter | v | v |  | надо настроить <br/> font fallback | одновременно 1 язык | v |
+| zettr | v |  | v | v | v |  |
+| apostrophe | v | v | v | v |  | v |
 
 #### Проигрыватели
 - vlc
@@ -407,10 +407,10 @@ fc-cache -fv
 - gwenview
 
 #### TeX
-- texstudio texlive-meta texlive-langcyrillic texlive-mathscience biber kbibtex
+- texstudio texlive texlive-langcyrillic texlive-mathscience biber kbibtex
 
 #### Wine
-- winetricks wine-staging
+- wine wine-gecko wine-mono winetricks
 
 #### Редактор звука и диктофон (*выбрать один*)
 - ~~audacity~~
