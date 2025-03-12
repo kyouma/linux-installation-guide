@@ -417,10 +417,11 @@ fc-cache -fv
 - okular
 - gwenview
 
-#### TeX
+#### TeX (1.1 или 2.8 Гб)
 - texstudio texlive texlive-langcyrillic texlive-mathscience biber kbibtex
+- Для `texlive` можно сделать `--ignore texlive-fontsextra`, т.к. он очень большой (1.7 Гб).
 
-#### Wine
+#### Wine (2 Гб)
 - wine wine-gecko wine-mono winetricks
 
 #### Редактор звука и диктофон (*выбрать один*)
