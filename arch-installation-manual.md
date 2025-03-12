@@ -338,6 +338,7 @@ fc-cache -fv
 #### Утилиты
 - less
 - fuse (для запуска AppImage; fuse2, не fuse3; запрашивать как просто "fuse")
+- flatpak flatpak-kcm
 - kwalletmanager
 - git base-devel (для установки пакетов из AUR)
 - mc
