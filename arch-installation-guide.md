@@ -386,6 +386,7 @@ fc-cache -fv
 - tor torbrowser-launcher(надо ли?)
 - nekoray\* v2rayn\* hiddify\*
 - openvpn networkmanager-openvpn (не уверен, что KDE сам не справится)
+- rz-cutter(разобраться с декомпилятором: в версии из репозитория его нету) ghidra(опционально)
 
 #### Markdown (*выбрать один*)
 - ~~Kate (markdownpart marksman)~~
