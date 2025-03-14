@@ -127,7 +127,7 @@
         ```
 
         между вызовами `imp.QImage::format()` и `imp.QImage::size()` или константу 4.0 (`0x00 00 00 00 00 00 10 40h`) и менять адрес на любую константу 2.0 (`0x00 00 00 00 00 00 00 40h`) из read-only сегмента памяти.
-        Пример для версии 24.12. Заменить `04fe0a00` на `14fe0a00`, чтобы перенести переменную на 16 байт дальше и попасть на 2.0.
+        Пример для версии 24.12. Заменить `04fe0a00` на `14fe0a00`, чтобы перенести переменную на 16 байт дальше и попасть на 2.0 (конкретные адреса могут менять в зависимости от версии или даже дистрибутива Linux, так что надо искать через Cutter, Ghidra или другой дизассемблер/декомпилятор).
 
         ```
         0x000c2e19      ff1511410f00           call    qword [QImage::size() const] ; 0x1b6f30
@@ -182,7 +182,7 @@
         export XMODIFIERS=@im=fcitx
         ```
 
-    + В Wayland **TODO**.
+    + В Wayland, вроде, достаточно выбрать Fcitx в "Virtual Keyboard" в системных настройках.
 - В X11 на русской раскладке, возможно, не работают сочетания клавиш из-за перевода нажатий в русские буквы.
     + Возможно, поможет "Disable overriding XKB settings"
 - Выключить "Global options" - Behavior - "Show preedit in application"
@@ -442,6 +442,39 @@ fc-cache -fv
 
 ### TODO
 
-- Драйвера Bluetooth
-    + Работа Wi-Fi и Bluetooth одновременно (*bt_coex_active*)
+- Драйвера Bluetooth (
+    + Работа Wi-Fi и Bluetooth одновременно (*bt_coex_active*) или Bluetooth вообще
+    + Что-то из этого может помочь:
+        * Ссылки: [установка драйверов](https://unix.stackexchange.com/questions/700030/no-default-controller-available-bluetooth-arch-linux), [Wi-Fi&Bluetooth coexistence](https://wiki.archlinux.org/title/Network_configuration/Wireless#Bluetooth_coexistence), [hardware](https://linux-hardware.org/?id=usb:8087-07da).
+        * Просмотр информации:
+
+            ```
+            sudo lsusb -v | grep -i blue
+            lsmod | grep btusb
+            lsmod | grep -i blue
+            modinfo btusb | less
+            sudo dmesg | grep iwlwifi | less
+            sudo dmesg | grep -i blue | less
+            journalctl -b | grep -iE 'error|firmware' | less
+            rfkill list
+            bluetoothctl  # show
+            ```
+
+        * Установка драйверов:
+
+            ```
+            sudo pacman --needed -Syu bluez bluez-utils
+            sudo systemctl enable --now bluetooth.service
+            modprobe btusb
+            sudo systemctl restart --now bluetooth.service
+            sudo systemctl stop bluetooth.service
+            sudo /usr/lib/bluetooth/bluetoothd -n -d
+            sudo nano /etc/modprobe.d/iwlwifi.conf
+            sudo systemctl restart --now bluetooth.service
+            sudo /etc/init.d/bluetooth restart
+            systemctl start bluetooth
+            sudo rmmod btusb && sudo modprobe btusb
+            ```
+
 - Firewall (ufw, firewalld, ...)
+- Микрофон
