@@ -106,6 +106,7 @@
 - Добавить Yakuake в автозапуск
 - Поменять тему экрана загрузки (SDDM): "Colors & Themes" - "Login Screen"
 - Настроить приложения по умолчанию
+- [Обои Linux Mint](http://packages.linuxmint.com/pool/main/m/); сакура в Sonya
 
 #### Настройка Dolphin
 
@@ -492,7 +493,7 @@ fc-cache -fv
             sudo pacman --needed -Syu bluez bluez-utils
             sudo systemctl enable --now bluetooth.service
             modprobe btusb
-            sudo systemctl restart --now bluetooth.service  # Кажется, достаточно этого
+            sudo systemctl restart --now bluetooth.service
             sudo systemctl stop bluetooth.service
             sudo /usr/lib/bluetooth/bluetoothd -n -d
             sudo nano /etc/modprobe.d/iwlwifi.conf
