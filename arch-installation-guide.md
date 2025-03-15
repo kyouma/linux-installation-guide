@@ -492,15 +492,15 @@ fc-cache -fv
             ```
             sudo pacman --needed -Syu bluez bluez-utils
             sudo systemctl enable --now bluetooth.service
-            modprobe btusb
             sudo systemctl restart --now bluetooth.service
             sudo systemctl stop bluetooth.service
             sudo /usr/lib/bluetooth/bluetoothd -n -d
             sudo nano /etc/modprobe.d/iwlwifi.conf
             sudo systemctl restart --now bluetooth.service
             sudo /etc/init.d/bluetooth restart
-            systemctl start bluetooth
+            sudo systemctl restart bluetooth
             sudo rmmod btusb && sudo modprobe btusb
+            bluetoothctl: power on; agent on; scan on; pair MAC_address
             ```
 
 - Firewall (ufw, firewalld, ...)
