@@ -347,12 +347,15 @@ fc-cache -fv
 
 #### Настройка Ghostwriter
 
+- Выключить: View - "Dark mode"
 - Добавить в файл `$HOME/.config/kde.org/ghostwriter.conf`
 
     ```
     [Preview]
     lastUsedExporter=Pandoc
     ```
+    
+  Когда этот параметр не задан (часто слетает сам после захода в настройки Preview), то при открытии настроек Preview программа будет вылетать.
 
 ### Приложения для установки
 
