@@ -492,7 +492,7 @@ fc-cache -fv
             sudo pacman --needed -Syu bluez bluez-utils
             sudo systemctl enable --now bluetooth.service
             modprobe btusb
-            sudo systemctl restart --now bluetooth.service
+            sudo systemctl restart --now bluetooth.service  # Кажется, достаточно этого
             sudo systemctl stop bluetooth.service
             sudo /usr/lib/bluetooth/bluetoothd -n -d
             sudo nano /etc/modprobe.d/iwlwifi.conf
