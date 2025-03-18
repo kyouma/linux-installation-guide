@@ -48,6 +48,7 @@
 ### Настройка свежей системы
 
 - Раскомментировать "Color" и "VerbosePkgLists" в `/etc/pacman.conf`
+- Обновить список зеркал: `sudo reflector --country Russia --sort rate --save /etc/pacman.d/mirrorlist`
 - Выключить swap и zram ("`Just more ram + earlyoom ᕕ( ᐛ )ᕗ`")
     + `sudo systemctl enable --now earlyoom`
     + Выключить zram (см. "`zram-generator`", "`systemd.zram=0`" и [ссылку](https://askubuntu.com/a/1419240))
@@ -381,7 +382,7 @@ fc-cache -fv
 - unrar zip unzip 7zip
 - yt-dlp
 - virtualbox-guest-utils (если на виртуальной машине VirtualBox)
-- reflector (управляет списком серверов для загрузки пакетов)
+- reflector (управляет списком серверов для загрузки пакетов) rsync
 - intel-ucode или amd-ucode
 - powerdevil power-profiles-daemon
 
