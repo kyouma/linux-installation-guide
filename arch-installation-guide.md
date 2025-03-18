@@ -107,6 +107,7 @@
 - Поменять тему экрана загрузки (SDDM): "Colors & Themes" - "Login Screen"
 - Настроить приложения по умолчанию
 - [Обои Linux Mint](http://packages.linuxmint.com/pool/main/m/); сакура в Sonya
+- Если нет опций регулировки режима производительности, то см. [ссылку](https://wiki.archlinux.org/title/KDE#No_power_profile_options).
 
 #### Настройка Dolphin
 
@@ -382,6 +383,7 @@ fc-cache -fv
 - virtualbox-guest-utils (если на виртуальной машине VirtualBox)
 - reflector (управляет списком серверов для загрузки пакетов)
 - intel-ucode или amd-ucode
+- powerdevil power-profiles-daemon
 
 #### Офис
 - libreoffice-fresh hunspell hunspell-ru hunspell-en_us hunspell-en_gb hyphen hyphen-en hyphen-ru\*
