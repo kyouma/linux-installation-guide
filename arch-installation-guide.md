@@ -371,6 +371,7 @@ fc-cache -fv
 #### Настройка Ghostwriter
 
 - Выключить: View - "Dark mode"
+- Включить табуляцию через пробелы
 - Добавить в файл `$HOME/.config/kde.org/ghostwriter.conf`
 
     ```
