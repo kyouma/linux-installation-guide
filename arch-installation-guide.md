@@ -124,7 +124,9 @@
 - Показывать путь к папке сверху целиком (Show full path inside location bar)
 - Показывать панель фильтрации
 - Показывать скрытые файлы и папки
+    + Сортировка - "Hidden Files last"
 - Показать панель информации
+    + Выключить "Show item on hover"
 - В настройках Confirmation поменять "When opening an executable file"
 - Включить панель меню (Show menu bar with all actions)
 - Добавить кнопку "Up" и "Refresh"
@@ -314,8 +316,8 @@ fc-cache -fv
     + Блокировка автозапуска аудио и видео
 - Дополнения
     + uBlock Origin
-	+ Return YouTube dislikes
-	+ To Google Translate
+    + Return YouTube dislikes
+    + To Google Translate
 
 #### Настройка LibreOffice
 
