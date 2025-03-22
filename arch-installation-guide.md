@@ -112,6 +112,9 @@
 - [Обои Linux Mint](http://packages.linuxmint.com/pool/main/m/); сакура в Sonya
 - Если нет опций регулировки режима производительности, то см. [ссылку](https://wiki.archlinux.org/title/KDE#No_power_profile_options)
 - Свои обои можно хранить в `$HOME/.local/share/wallpapers`, т.к. они не копируются туда при установке автоматически
+- Настроить "Screen Edges"
+    + Включить "Peek at Desktop" в правом нижнем углу и удалить соответствующую кнопку с панели задач
+    + Включить "Overview" в левом верхнем углу
 
 #### Настройка Dolphin
 
