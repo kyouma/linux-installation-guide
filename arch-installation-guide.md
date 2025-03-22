@@ -129,7 +129,7 @@
     + Выключить "Show item on hover"
 - В настройках Confirmation поменять "When opening an executable file"
 - Включить панель меню (Show menu bar with all actions)
-- Добавить кнопку "Up" и "Refresh"
+- Добавить кнопку "Up" и "Refresh" (скрыть её подпись)
 - Установить для корзины вид с группировкой по исходному пути
     + "Show Additional Information" - Path и "Deletion Time"
     + View - "Show in Groups" и "Adjust View Display Style"
