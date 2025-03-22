@@ -412,7 +412,7 @@ fc-cache -fv
 - kcalc
 - krfb krdc (для подключения и "раздачи" удалённого рабочего стола)
 - kdeconnect
-- partitionmanager
+- partitionmanager ntfs-3g
 - okteta
 - kfind
 - docker docker-compose lazydocker\*
