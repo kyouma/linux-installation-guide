@@ -1,5 +1,18 @@
 ### Процесс установки через archinstall
 
+1. Подключиться к интернету:
+    - По Wi-Fi:
+        + `iwctl`
+        + `help`
+        + `device list`
+        + `device name set-property Powered on`
+        + `adapter adapter set-property Powered on`
+        + `station name scan`
+        + `station name get-networks`
+        + `station name connect SSID` или `station name connect-hidden SSID`
+        + По WPS:
+            * wsc list
+            * wsc device push-button
 1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages`
     - Чтобы EFI-загрузчик установился в `/boot`, а не в папку/раздел EFI, в функции `_add_grub_bootloader()` переменная `boot_dir` должна остаться "`/boot`": выключить ветку
 
@@ -11,6 +24,7 @@
 
     - Чтобы EFI-загрузчик установился не в папку/EFI-запись BOOT, а в папку с осмысленным именем, в этой же функции убрать из списка `add_options` элемент `--removable` и установить желаемое имя в `--bootloader-id=<имя>`. Запись BOOT может понадобиться только на некоторых системах, которые без неё не читают остальные записи; но тогда можно вручную скопировать папку EFI-загрузчика любой ОС на место BOOT.
 1. Разметить диск (мой вариант, не как в Arch Wiki)
+    - Посмотреть диски: `fdisk -l`. Выбрать нужный диск: `fdisk /dev/...`.
     - Корневой раздел
         + тип `Linux x86-64 root`
         + форматировать командой `mkfs.ext4 /dev/root_partition`
@@ -19,31 +33,31 @@
         + тип `EFI system partition`
         + форматировать (только если надо) командой `mkfs.fat -F 32 /dev/efi_system_partition`
         + монтировать к `/mnt/archinstall/boot/efi` (получится конфигурация `/mnt/archinstall/boot/efi/EFI/`<папки EFI-записей разных ОС>)
-2. Настроить зеркала для своей страны
-3. Disk configuration
+3. Настроить зеркала для своей страны
+4. Disk configuration
     - Pre-mounted - `/mnt/archinstall`
-4. Swap
+5. Swap
     - Удалить swap on zram
-5. Bootloader
+6. Bootloader
     - Grub
-6. Hostname
-7. Root password
-8. User account
+7. Hostname
+8. Root password
+9. User account
     - Добавить своего пользователя в администраторы
-9. Profile
+10. Profile
     - Desktop - KDE Plasma
-10. Audio
+11. Audio
     - Pipewire
-11. Kernel
+12. Kernel
     - `linux` и `linux-lts`
-12. Network
+13. Network
     - Network manager
-13. Additional packages
+14. Additional packages
     - Подготовить список через пробел и добавить потом в сохранённый конфиг
-14. Optional repositories
+15. Optional repositories
     - multilib
-15. Timezone
-16. Save configuration, чтобы подредактировать список пакетов
+16. Timezone
+17. Save configuration, чтобы подредактировать список пакетов
 
 ### Настройка свежей системы
 
