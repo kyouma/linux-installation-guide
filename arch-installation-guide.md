@@ -69,6 +69,7 @@
     + Если надо, настроить swap-раздел/файл нужного размера для гибернации
 - Включить Bluetooth: `sudo systemctl enable --now bluetooth.service`
 - Включить AUR
+- Включить firewall: `sudo ufw enable` и `sudo systemctl enable --now ufw.service`
 - Настроить локали, чтобы был нормальный порядок символов при сортировке, метрическая система мер, размеры бумаги и формат записи времени:
     + ~~Расскомментировать "`ru_RU.UTF-8`" в файле `/etc/locale.gen` и выполнить `sudo locale-gen`~~ (уже не надо: решил использовать `C.UTF-8`, т.к. она не переводит названия месяцев на русский)
     + Для всей системы - изменить файл `/etc/locale.conf` (или подать нужные значения в команду `sudo localectl set-locale ...=...`), а для одного пользователя - создать файл `$HOME/.config/locale.conf`
@@ -421,6 +422,8 @@ fc-cache -fv
 - reflector (управляет списком серверов для загрузки пакетов) rsync
 - intel-ucode или amd-ucode
 - powerdevil power-profiles-daemon
+- ufw
+- system-config-printer
 
 #### Офис
 - libreoffice-fresh hunspell hunspell-ru hunspell-en_us hunspell-en_gb hyphen hyphen-en hyphen-ru\*
@@ -542,5 +545,4 @@ fc-cache -fv
             bluetoothctl: power on; agent on; scan on; pair MAC_address
             ```
 
-- Firewall (ufw, firewalld, ...)
 - Микрофон
