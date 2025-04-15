@@ -5,14 +5,14 @@
         + `iwctl`
         + `help`
         + `device list`
-        + `device name set-property Powered on`
-        + `adapter adapter set-property Powered on`
-        + `station name scan`
-        + `station name get-networks`
-        + `station name connect SSID` или `station name connect-hidden SSID`
+        + `device <device_name> set-property Powered on`
+        + `adapter <adapter_name> set-property Powered on`
+        + `station <device_name> scan`
+        + `station <device_name> get-networks`
+        + `station <device_name> connect SSID` или `station name connect-hidden SSID`
         + По WPS:
             * wsc list
-            * wsc device push-button
+            * wsc <device_name> push-button
 1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages`
     - Чтобы EFI-загрузчик установился в `/boot`, а не в папку/раздел EFI, в функции `_add_grub_bootloader()` переменная `boot_dir` должна остаться "`/boot`": выключить ветку
 
