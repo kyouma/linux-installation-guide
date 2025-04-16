@@ -339,6 +339,17 @@ fc-cache -fv
     + uBlock Origin
     + Return YouTube dislikes
     + To Google Translate
+- Чтобы тема (например, "Red Ladybug") не влияла на цвет строки поиска, добавить в userchrome.css (строки и подпункты могут быть не самыми точными, но сработало):
+    ```
+    /* .browserContainer > findbar { */
+    findbar {
+        /* background-image: none !important; */
+        /* background-color: #F9F9FB !important; */
+        background: #F9F9FB !important;
+        color: #15141A !important;
+        /* border-color: # */
+    }
+    ```
 
 #### Настройка LibreOffice
 
