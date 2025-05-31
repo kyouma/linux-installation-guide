@@ -11,8 +11,8 @@
         + `station <device_name> get-networks`
         + `station <device_name> connect SSID` или `station name connect-hidden SSID`
         + По WPS:
-            * wsc list
-            * wsc <device_name> push-button
+            * `wsc list`
+            * `wsc <device_name> push-button`
 1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages`
     - Чтобы EFI-загрузчик установился в `/boot`, а не в папку/раздел EFI, в функции `_add_grub_bootloader()` переменная `boot_dir` должна остаться "`/boot`": выключить ветку
 
@@ -55,7 +55,7 @@
 14. Additional packages
     - Подготовить список через пробел и добавить потом в сохранённый конфиг
 15. Optional repositories
-    - multilib
+    - `multilib`
 16. Timezone
 17. Save configuration, чтобы подредактировать список пакетов
 
@@ -63,7 +63,7 @@
 
 - Раскомментировать "Color" и "VerbosePkgLists" в `/etc/pacman.conf`
 - Обновить список зеркал: `sudo reflector --country Russia --sort rate --save /etc/pacman.d/mirrorlist`
-- Выключить swap и zram ("`Just more ram + earlyoom ᕕ( ᐛ )ᕗ`")
+- Выключить swap и zram ("[`Just more ram + earlyoom ᕕ( ᐛ )ᕗ`](https://www.reddit.com/r/archlinux/comments/jn2ocl/comment/gaz3a7u/)")
     + `sudo systemctl enable --now earlyoom`
     + Выключить zram (см. "`zram-generator`", "`systemd.zram=0`" и [ссылку](https://askubuntu.com/a/1419240))
     + Если надо, настроить swap-раздел/файл нужного размера для гибернации
@@ -109,7 +109,7 @@
 
 #### Настройка KDE Plasma 6
 
-- Ressources monitor (2 "S"; [GitHub](https://github.com/orblazer/plasma-applet-resources-monitor), [KDE Store on OpenDesktop.org](https://store.kde.org/p/2143899))
+- Ressources monitor (2 буквы "s"; [GitHub](https://github.com/orblazer/plasma-applet-resources-monitor), [KDE Store on OpenDesktop.org](https://store.kde.org/p/2143899))
 - Панель задач - "Icons-and-Text task manager"
     + Закрытие программ на панели задач средней кнопкой мыши
     + Выключить "Keep launchers separate", чтобы окна открывались на месте своих ярлыков
