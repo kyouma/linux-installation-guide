@@ -13,7 +13,7 @@
         + По WPS:
             * `wsc list`
             * `wsc <device_name> push-button`
-1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages`
+1. Модифицировать скрипт `archinstall/lib/installer.py` в системной папке `site-packages` (она может лежать в папке `/usr/lib/pythonX.Y`)
     - Чтобы EFI-загрузчик установился в `/boot`, а не в папку/раздел EFI, в функции `_add_grub_bootloader()` переменная `boot_dir` должна остаться "`/boot`": выключить ветку
 
         ```
